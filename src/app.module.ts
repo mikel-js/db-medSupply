@@ -4,13 +4,15 @@ import { AppService } from './app.service';
 import { AdminModule } from './admin/admin.module';
 import { ItemsModule } from './items/items.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Admin } from './admin/admin.entity';
+import { Items } from './items/items.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
-      entities: [],
+      entities: [Admin, Items],
       synchronize: true,
     }),
     AdminModule,
