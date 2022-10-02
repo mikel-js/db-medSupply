@@ -3,11 +3,16 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/users/user.entity';
 import { Repository } from 'typeorm';
 import { AddItemDto } from './dtos/add-item.dto';
+import { GetItemDto } from './dtos/get-item.dto';
 import { Item } from './item.entity';
 
 @Injectable()
 export class ItemsService {
   constructor(@InjectRepository(Item) private repo: Repository<Item>) {}
+
+  getItem(itemDto: GetItemDto) {
+    return this.repo.createQueryBuilder().select('*').getRawMany();
+  }
 
   add(itemDto: AddItemDto, user: User) {
     const item = this.repo.create(itemDto);

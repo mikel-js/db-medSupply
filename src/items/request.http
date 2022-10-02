@@ -9,10 +9,14 @@ content-type: application/json
 }
 
 
-### Approve existing report
+### Approve existing item
 PATCH http://localhost:3000/items/5
 content-Type:  application/json
 
 {
   "approved": true
 }
+
+
+### Get existing item
+GET http://localhost:3000/items?name=steth
