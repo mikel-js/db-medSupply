@@ -1,3 +1,4 @@
+import { Item } from 'src/items/item.entity';
 import {
   AfterInsert,
   AfterRemove,
@@ -23,8 +24,8 @@ export class User {
   @Column({ default: true })
   admin: boolean;
 
-  // @OneToMany(() => Report, (report) => report.user)
-  // reports: Report[];
+  @OneToMany(() => Item, (item) => item.user)
+  items: Item[];
 
   // @AfterInsert()
   // logInsert() {

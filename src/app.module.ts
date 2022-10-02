@@ -5,7 +5,7 @@ import { UsersModule } from './users/users.module';
 import { ItemsModule } from './items/items.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/user.entity';
-import { Items } from './items/items.entity';
+import { Item } from './items/item.entity';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
@@ -21,14 +21,14 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
           type: 'sqlite',
           database: config.get<string>('DB_NAME'),
           synchronize: true,
-          entities: [User, Items],
+          entities: [User, Item],
         };
       },
     }),
     // TypeOrmModule.forRoot({
     //   type: 'sqlite',
     //   database: 'db.sqlite',
-    //   entities: [User, Items],
+    //   entities: [User, Item],
     //   synchronize: true,
     // }),
     UsersModule,

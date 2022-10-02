@@ -1,0 +1,9 @@
+POST http://localhost:3000/items/add
+content-type: application/json
+
+{
+  "name": "item1",
+  "category": "category1",
+  "quantity": 2,
+  "price": 123
+}
