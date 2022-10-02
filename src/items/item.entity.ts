@@ -6,6 +6,9 @@ export class Item {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ default: false })
+  approved: boolean;
+
   @Column()
   name: string;
 

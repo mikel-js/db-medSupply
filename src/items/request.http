@@ -2,8 +2,17 @@ POST http://localhost:3000/items/add
 content-type: application/json
 
 {
-  "name": "item1",
-  "category": "category1",
-  "quantity": 2,
+  "name": "item5",
+  "category": "category5",
+  "quantity": 5,
   "price": 123
+}
+
+
+### Approve existing report
+PATCH http://localhost:3000/items/5
+content-Type:  application/json
+
+{
+  "approved": true
 }
