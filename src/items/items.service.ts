@@ -27,7 +27,7 @@ export class ItemsService {
   }
 
   async changeApproval(id: string, approved: boolean) {
-    const item = await this.repo.findOneBy({ id: parseInt(id) });
+    const item = await this.repo.findOne({ id: parseInt(id) });
 
     if (!item) {
       throw new NotFoundException('item not found');
