@@ -12,4 +12,7 @@ export class AddItemDto {
 
   @IsNumber()
   price: number;
+
+  @IsString()
+  brand: string;
 }

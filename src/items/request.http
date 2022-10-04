@@ -2,10 +2,11 @@ POST http://localhost:3000/items/add
 content-type: application/json
 
 {
-  "name": "item5",
+  "name": "item3",
   "category": "category5",
   "quantity": 5,
-  "price": 123
+  "price": 123,
+  "brand": "branded"
 }
 
 
@@ -19,4 +20,4 @@ content-Type:  application/json
 
 
 ### Get existing item
-GET http://localhost:3000/items?name=steth
+GET http://localhost:3000/items?brand=branded

@@ -16,6 +16,9 @@ export class Item {
   category: string;
 
   @Column()
+  brand: string;
+
+  @Column()
   quantity: number;
 
   @Column()

@@ -11,6 +11,9 @@ export class ItemDto {
   category: string;
 
   @Expose()
+  brand: string;
+
+  @Expose()
   quantity: number;
 
   @Expose()

@@ -11,7 +11,13 @@ export class ItemsService {
   constructor(@InjectRepository(Item) private repo: Repository<Item>) {}
 
   getItem(itemDto: GetItemDto) {
-    return this.repo.createQueryBuilder().select('*').getRawMany();
+    return this.repo
+      .createQueryBuilder()
+      .select('*')
+      .where('name=:name', { name: itemDto.name })
+      .orWhere('category=:category', { category: itemDto.category })
+      .orWhere('brand=:brand', { brand: itemDto.brand })
+      .getRawMany();
   }
 
   add(itemDto: AddItemDto, user: User) {
