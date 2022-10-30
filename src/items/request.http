@@ -21,3 +21,21 @@ content-Type:  application/json
 
 ### Get existing item
 GET http://localhost:3000/items?brand=branded
+
+
+### Get All existing item
+GET http://localhost:3000/items/all
+
+
+### create new item
+POST http://localhost:3000/items/add
+content-type: application/json
+
+{
+  "name": "item1",
+  "category": "category1",
+  "quantity": 1,
+  "price": 11,
+  "brand": "branded",
+  "imageUrl": "test"
+}

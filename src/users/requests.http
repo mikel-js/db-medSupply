@@ -16,7 +16,7 @@ content-type: application/json
 }
 
 ### Sign in as an existing user
-POST https://glacial-fjord-49170.herokuapp.com/signin
+POST https://glacial-fjord-49170.herokuapp.com/auth/signin
 content-type: application/json
 
 {

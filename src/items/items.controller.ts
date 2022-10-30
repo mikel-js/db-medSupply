@@ -29,6 +29,11 @@ export class ItemsController {
     return this.itemsService.getItem(query);
   }
 
+  @Get('/all')
+  getAllItems() {
+    return this.itemsService.getAllItems();
+  }
+
   @Post('/add')
   @UseGuards(AuthGuard)
   @Serialize(ItemDto)

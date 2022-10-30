@@ -20,6 +20,10 @@ export class ItemsService {
       .getRawMany();
   }
 
+  getAllItems() {
+    return this.repo.createQueryBuilder().select('*').getRawMany();
+  }
+
   addItem(itemDto: AddItemDto, user: User) {
     const item = this.repo.create(itemDto);
     item.user = user;
