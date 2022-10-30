@@ -33,7 +33,7 @@ export class ItemsController {
   @UseGuards(AuthGuard)
   @Serialize(ItemDto)
   addItem(@Body() body: AddItemDto, @CurrentUser() user: User) {
-    return this.itemsService.add(body, user);
+    return this.itemsService.addItem(body, user);
   }
 
   @Patch('/:id')

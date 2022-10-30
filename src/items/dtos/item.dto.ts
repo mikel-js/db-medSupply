@@ -20,6 +20,9 @@ export class ItemDto {
   price: number;
 
   @Expose()
+  imageUrl: boolean;
+
+  @Expose()
   approved: boolean;
 
   @Transform(({ obj }) => obj.user.id)

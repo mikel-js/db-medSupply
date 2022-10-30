@@ -24,6 +24,9 @@ export class Item {
   @Column()
   price: number;
 
+  @Column()
+  imageUrl: string;
+
   @ManyToOne(() => User, (user) => user.items)
   user: User;
 }

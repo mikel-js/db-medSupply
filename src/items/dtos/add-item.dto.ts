@@ -1,4 +1,4 @@
-import { IsString, IsNumber } from 'class-validator';
+import { IsString, IsNumber, IsOptional } from 'class-validator';
 
 export class AddItemDto {
   @IsString()
@@ -15,4 +15,8 @@ export class AddItemDto {
 
   @IsString()
   brand: string;
+
+  @IsString()
+  @IsOptional()
+  imageUrl: string;
 }

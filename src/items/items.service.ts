@@ -20,7 +20,7 @@ export class ItemsService {
       .getRawMany();
   }
 
-  add(itemDto: AddItemDto, user: User) {
+  addItem(itemDto: AddItemDto, user: User) {
     const item = this.repo.create(itemDto);
     item.user = user;
     return this.repo.save(item);

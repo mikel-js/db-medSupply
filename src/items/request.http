@@ -2,10 +2,10 @@ POST http://localhost:3000/items/add
 content-type: application/json
 
 {
-  "name": "item3",
-  "category": "category5",
-  "quantity": 5,
-  "price": 123,
+  "name": "item1",
+  "category": "category1",
+  "quantity": 1,
+  "price": 11,
   "brand": "branded"
 }
 

@@ -9,14 +9,20 @@ const dbConfig = {
 switch (process.env.NODE_ENV) {
   case 'development':
     Object.assign(dbConfig, {
-      type: 'sqlite',
-      database: 'db-sqlite',
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
       entities: ['**/*.entity.js'],
+      username: 'postgres',
+      password: 'postgres',
+      database: 'med-supply',
+      autoLoadEntities: true,
+      synchronize: true,
     });
     break;
   case 'production':
     Object.assign(dbConfig, {
-      type: 'postgres',
+      type: 'sqlite',
       url: process.env.DATABASE_URL,
       migrationsRun: true,
       entities: ['**/*.entity.js'],
