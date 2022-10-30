@@ -1,4 +1,4 @@
-POST https://glacial-fjord-49170.herokuapp.com/items/add
+POST https://db-med-supply.herokuapp.com/items/add
 content-type: application/json
 
 {

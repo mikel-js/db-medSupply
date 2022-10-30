@@ -1,5 +1,5 @@
 ### Create a new user
-POST https://glacial-fjord-49170.herokuapp.com/signup
+POST https://db-med-supply.herokuapp.com/signup
 content-type: application/json
 
 {
@@ -16,7 +16,7 @@ content-type: application/json
 }
 
 ### Sign in as an existing user
-POST https://glacial-fjord-49170.herokuapp.com/auth/signin
+POST https://db-med-supply.herokuapp.com/auth/signin
 content-type: application/json
 
 {
