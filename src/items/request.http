@@ -1,4 +1,4 @@
-POST http://localhost:3000/items/add
+POST https://glacial-fjord-49170.herokuapp.com/items/add
 content-type: application/json
 
 {
