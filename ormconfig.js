@@ -1,5 +1,5 @@
 const dbConfig = {
-  synchronize: false,
+  synchronize: true,
   migrations: ['migrations/*.js'],
   cli: {
     migrationsDir: 'migrations',
@@ -24,9 +24,8 @@ switch (process.env.NODE_ENV) {
     Object.assign(dbConfig, {
       type: 'postgres',
       url: process.env.DATABASE_URL,
-      migrationsRun: true,
+      migrationsRun: false,
       entities: ['**/*.entity.js'],
-      synchronize: true,
       ssl: {
         rejectUnauthorized: false,
       },
