@@ -10,6 +10,7 @@ async function bootstrap() {
     res.removeHeader('date');
     next();
   });
-  await app.listen(process.env.PORT || 3000);
+  app.enableCors();
+  await app.listen(process.env.PORT || 1000);
 }
 bootstrap();
