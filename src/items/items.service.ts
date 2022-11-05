@@ -40,4 +40,14 @@ export class ItemsService {
     item.approved = approved;
     return this.repo.save(item);
   }
+
+  async deleteItem(id: string) {
+    const item = await this.repo.findOne({ id: parseInt(id) });
+
+    if (!item) {
+      throw new NotFoundException('item not found');
+    }
+
+    return this.repo.delete(item);
+  }
 }

@@ -7,6 +7,7 @@ import {
   Param,
   Get,
   Query,
+  Delete,
 } from '@nestjs/common';
 import { get } from 'http';
 import { AdminGuard } from 'src/guards/admin.guard';
@@ -35,7 +36,6 @@ export class ItemsController {
   }
 
   @Post('/add')
-  @UseGuards(AuthGuard)
   @Serialize(ItemDto)
   addItem(@Body() body: AddItemDto, @CurrentUser() user: User) {
     return this.itemsService.addItem(body, user);
@@ -45,5 +45,11 @@ export class ItemsController {
   @UseGuards(AdminGuard)
   approveItem(@Param('id') id: string, @Body() body: ApproveItemDto) {
     return this.itemsService.changeApproval(id, body.approved);
+  }
+
+  @Delete('/delete/:id')
+  @Serialize(ItemDto)
+  deleteItem(@Param('id') id: string) {
+    return this.itemsService.deleteItem(id);
   }
 }
